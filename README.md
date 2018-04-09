@@ -1,5 +1,7 @@
 # docker-compose
 
+version: '3'
+
 要遵照yml文件格式
 
 不能用tab
