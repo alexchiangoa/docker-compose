@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mysql:
+    container_name: mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: qq303904446
+    image: "mysql:latest"
+    ports: 
+      - "3306:3306"
+    volumes: 
+      - "/Users/alex/Documents/mysql:/var/lib/mysql"
+  php72: 
+    container_name: php72
+    image: "cruisechang/centos-httpd-php:72"
+    links: 
+      - mysql
+    ports: 
+      - "8001:80"
+    volumes: 
+      - "/Users/alex/Documents/php72/etc:/etc"
+      - "/Users/alex/Documents/php72/html:/var/www/html"
